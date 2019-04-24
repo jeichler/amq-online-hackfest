@@ -6,7 +6,7 @@ metadata:
     app: enmasse
 spec:
   displayName: Input Online Queue
-  displayOrder: 2
+  displayOrder: 1
   addressType: queue
   resources:
     router: 0.1

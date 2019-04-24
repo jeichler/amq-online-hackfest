@@ -3,9 +3,9 @@ kind: Address
 metadata:
   labels:
     addressType: queue
-  name: team3-space.input-online
+  name: team3-space.input-batch
   namespace: tenant
 spec:
-  address: input-online
-  plan: input-online-queue
+  address: input-batch
+  plan: input-batch-queue
   type: queue

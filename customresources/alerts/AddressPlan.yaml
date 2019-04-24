@@ -6,7 +6,7 @@ metadata:
     app: enmasse
 spec:
   displayName: Alerts Multicast
-  displayOrder: 2
+  displayOrder: 3
   addressType: multicast
   resources:
     router: 0.1

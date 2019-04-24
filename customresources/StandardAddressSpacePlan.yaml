@@ -14,7 +14,7 @@ spec:
     broker: 3.0
     aggregate: 6.0
   addressPlans:
-  - input-online-queue
-  - input-batch-queue
   - alerts-multicast
   - results-queue
+  - input-online-queue
+  - input-batch-queue

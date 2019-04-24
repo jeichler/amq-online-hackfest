@@ -1,0 +1,11 @@
+apiVersion: enmasse.io/v1beta1
+kind: Address
+metadata:
+  labels:
+    addressType: mutlicast
+  name: team3-space.alerts
+  namespace: tenant
+spec:
+  address: alerts
+  plan: alerts-multicast
+  type: multicast
