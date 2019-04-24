@@ -1,0 +1,11 @@
+apiVersion: enmasse.io/v1beta1
+kind: Address
+metadata:
+  labels:
+    addressType: queue
+  name: team3-space.inputonline.735c0d6b-187e-4e45-9423-adacaf54ac41
+  namespace: tenant
+spec:
+  address: input_online
+  plan: input-online-queue
+  type: queue
