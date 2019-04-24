@@ -10,7 +10,7 @@ spec:
   username: user$i
   authentication:
     type: password
-    password: Zm9vYmFyCg== # Base64 encoded "foobar"
+    password: Zm9vYmFy # echo -n "foobar" | base64
   authorization:
     - addresses: ["results_user$i"]
       operations: ["recv"]
