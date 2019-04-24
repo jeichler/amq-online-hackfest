@@ -1,0 +1,13 @@
+apiVersion: admin.enmasse.io/v1beta2
+kind: AddressPlan
+metadata:
+  name: results-queue
+  labels:
+    app: enmasse
+spec:
+  displayName: Results Queue
+  displayOrder: 4
+  addressType: queue
+  resources:
+    router: 0.1
+    broker: 0.2
