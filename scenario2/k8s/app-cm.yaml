@@ -1,0 +1,10 @@
+apiVersion: v1
+data:
+  msg.size: '10000'
+  msg.rate: '1000'
+  queue.name: "prodqueue"
+  consumer.number: '5'
+  producer.number: '20'
+kind: ConfigMap
+metadata:
+  name: app-config

@@ -1,0 +1,35 @@
+spec:
+  template:
+    spec:
+      containers:
+        - env:
+            - name: MESSAGING_HOST
+              valueFrom:
+                configMapKeyRef:
+                  name: messaging-config
+                  key: service.host
+            - name: MESSAGING_PORT
+              valueFrom:
+                configMapKeyRef:
+                  name: messaging-config
+                  key: service.port.amqp
+            - name: MSG_SIZE
+              valueFrom:
+                configMapKeyRef:
+                  name: app-config
+                  key: msg.size
+            - name: ADDRESS
+              valueFrom:
+                configMapKeyRef:
+                  name: app-config
+                  key: queue.name
+            - name: RATE
+              valueFrom:
+                configMapKeyRef:
+                  name: app-config
+                  key: msg.rate
+            - name: NUMBER_CONSUMERS
+              valueFrom:
+                configMapKeyRef:
+                  name: app-config
+                  key: consumer.number

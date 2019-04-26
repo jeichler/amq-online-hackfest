@@ -1,0 +1,56 @@
+apiVersion: enmasse.io/v1beta1
+kind: AddressSpace
+metadata:
+  name: production
+spec:
+  type: brokered
+  plan: production #address space plan: engineering, qe, production
+  endpoints:
+    - name: messaging
+      service: messaging
+      expose:
+        type: route
+        routeHost: prodqueue-prod.apps.amqhackfest-emea04.openshift.opentlc.com
+        routeTlsTermination: passthrough
+        routeServicePort: amqps
+      exports:
+      - kind: ConfigMap
+        name: messaging-config
+      cert:
+        provider: openshift
+
+
+# apiVersion: enmasse.io/v1beta1
+# kind: AddressSpace
+# metadata:
+#   name: team3-space
+# spec:
+#   type: standard
+#   plan: standard-input # address space plan
+#   authenticationService:
+#     name: standard-authservice
+#   endpoints:
+#     - name: messaging
+#       service: messaging
+#       expose:
+#         type: route
+#         routeHost: messaging-test.apps.internal.pcfe.net
+#         routeTlsTermination: passthrough
+#         routeServicePort: amqps
+#       cert:
+#         provider: openshift
+#         # tlsKey: ZXhhbXBsZSAtbgo=
+#         # tlsCert: ZXhhbXBsZSAtbgo=
+#       export:
+#         - kind: ConfigMap
+#           name: myconfig
+#         - kind: Service
+#           name: myservice
+#     - name: console
+#       service: console
+#       expose:
+#         type: route
+#         routeTlsTermination: reencrypt
+#         routeServicePort: https
+#       cert:
+#         provider: openshift

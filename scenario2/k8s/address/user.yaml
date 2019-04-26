@@ -1,0 +1,24 @@
+apiVersion: user.enmasse.io/v1beta1
+kind: MessagingUser
+metadata:
+  name: production.client
+spec:
+  username: system:serviceaccount:prod:default
+  authentication:
+    type: serviceaccount
+  authorization:
+    - operations: ["send", "recv"]
+      addresses: ["prodqueue"]
+---
+apiVersion: user.enmasse.io/v1beta1
+kind: MessagingUser
+metadata:
+  name: production.foobar
+spec:
+  username: foobar
+  authentication:
+    type: password
+    password: Zm9vYmFy # echo -n "foobar" | base64
+  authorization:
+    - operations: ["send", "recv"]
+      addresses: ["prodqueue"]

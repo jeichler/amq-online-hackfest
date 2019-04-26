@@ -1,0 +1,17 @@
+apiVersion: enmasse.io/v1beta1
+kind: Address
+metadata:
+  name: eng.dlq #addressspace.addressname
+spec:
+  address: DLQ
+  type: queue
+  plan: queue # address plan: queue and topic are available
+---
+apiVersion: enmasse.io/v1beta1
+kind: Address
+metadata:
+  name: eng.expiry #addressspace.addressname
+spec:
+  address: ExpiryQueue
+  type: queue
+  plan: queue # address plan: queue and topic are available
